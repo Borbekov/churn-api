@@ -1,10 +1,11 @@
 from contextlib import asynccontextmanager
 from pathlib import Path
 
-import joblib
 from fastapi import FastAPI
 
 from .routers import health, predict
+from .ml import load_pipeline
+from .config import settings
 
 MODEL_PATH = (
     Path(__file__).resolve().parent.parent / "artifacts" / "churn_pipeline.joblib"
@@ -13,7 +14,7 @@ MODEL_PATH = (
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    app.state.model = joblib.load(MODEL_PATH)
+    app.state.pipeline = load_pipeline(settings.pipeline_path)
     yield
 
 

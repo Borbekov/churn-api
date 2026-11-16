@@ -201,6 +201,7 @@ dependencies = [
     { name = "fastapi", extra = ["standard"] },
     { name = "joblib" },
     { name = "pandas" },
+    { name = "pydantic-settings" },
     { name = "ruff" },
     { name = "scikit-learn" },
 ]
@@ -210,6 +211,7 @@ requires-dist = [
     { name = "fastapi", extras = ["standard"], specifier = ">=0.163.1" },
     { name = "joblib", specifier = ">=1.6.0" },
     { name = "pandas", specifier = ">=3.1.1" },
+    { name = "pydantic-settings", specifier = ">=2.16.3" },
     { name = "ruff", specifier = ">=0.17.5" },
     { name = "scikit-learn", specifier = ">=1.9.1" },
 ]
