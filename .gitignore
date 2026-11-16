@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Виртуальное окружение
+.venv/
+
+# Секреты (SECRET_KEY, пароли БД появятся в Блоке 3)
+.env
+
+# Кэши инструментов
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# macOS
+.DS_Store
