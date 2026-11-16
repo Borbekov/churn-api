@@ -1,19 +1,17 @@
 """Train the churn model and save the pipeline to artifacts/"""
 
+import json
 from pathlib import Path
 
 import joblib
-import json
-
 import pandas as pd
-
 import sklearn
-from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import cross_val_score, train_test_split
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_PATH = ROOT / "data" / "Telco-Customer-Churn.csv"
@@ -54,8 +52,6 @@ def build_pipeline() -> Pipeline:
 
 
 def main():
-    # 1. load_data → 2. stratified train/test split → 3. fit
-    # 4. ROC-AUC на тесте → 5. сохранить pipeline + metadata.json
     X, y = load_data()
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=RANDOM_STATE, stratify=y
