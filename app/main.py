@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from .routers import health
+from .routers import health, predict
 
 app = FastAPI(
     title="Churn API",
@@ -9,3 +9,4 @@ app = FastAPI(
 )
 
 app.include_router(health.health_router)
+app.include_router(predict.predict_router)

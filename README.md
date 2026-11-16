@@ -20,3 +20,11 @@ churn-api/
 ├── pyproject.toml
 ├── uv.lock
 └── README.md
+
+
+
+tenure - Number of months the customer has stayed with the company
+monthly_charges - The amount charged to the customer monthly
+сontract - The contract term of the customer (Month-to-month, One year, Two year)
+internet_service - Customer’s internet service provider (DSL, Fiber optic, No)
+payment_method - The customer’s payment method (Electronic check, Mailed check, Bank transfer (automatic), Credit card (automatic))
