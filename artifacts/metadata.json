@@ -1,0 +1,13 @@
+{
+  "roc_auc": 0.8323271073910459,
+  "roc_auc_cv": 0.8355463218309955,
+  "f1": 0.5557206537890045,
+  "features": [
+    "tenure",
+    "monthly_charges",
+    "contract",
+    "internet_service",
+    "payment_method"
+  ],
+  "sklearn_version": "1.9.1"
+}

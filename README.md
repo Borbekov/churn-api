@@ -28,3 +28,10 @@ monthly_charges - The amount charged to the customer monthly
 сontract - The contract term of the customer (Month-to-month, One year, Two year)
 internet_service - Customer’s internet service provider (DSL, Fiber optic, No)
 payment_method - The customer’s payment method (Electronic check, Mailed check, Bank transfer (automatic), Credit card (automatic))
+
+
+dataset (Telco-Customer-Churn) - https://www.kaggle.com/datasets/blastchar/telco-customer-churn
+
+| Features      | ROC-AUC (5-fold CV) |
+|---------------|---------------------|
+| 5 (v1, API)   | 0.836 ± 0.010       |
