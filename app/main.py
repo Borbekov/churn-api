@@ -27,3 +27,4 @@ app = FastAPI(
 
 app.include_router(health.health_router)
 app.include_router(predict.predict_router)
+app.frontend("/", directory="frontend/dist")
