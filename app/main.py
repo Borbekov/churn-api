@@ -1,3 +1,5 @@
+import logging
+
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -10,6 +12,8 @@ from .config import settings
 MODEL_PATH = (
     Path(__file__).resolve().parent.parent / "artifacts" / "churn_pipeline.joblib"
 )
+
+logger = logging.getLogger(__name__)
 
 
 @asynccontextmanager
@@ -27,4 +31,10 @@ app = FastAPI(
 
 app.include_router(health.health_router)
 app.include_router(predict.predict_router)
-app.frontend("/", directory="frontend/dist")
+
+if settings.frontend_dist_path.is_dir():
+    app.frontend("/", directory=str(settings.frontend_dist_path))
+else:
+    logger.warning(
+        "Frontend build not found at %s, UI disabled", settings.frontend_dist_path
+    )

@@ -10,5 +10,7 @@ class Settings(BaseSettings):
 
     pipeline_path: Path = ROOT / "artifacts" / "churn_pipeline.joblib"
 
+    frontend_dist_path: Path = ROOT / "frontend" / "dist"
+
 
 settings = Settings()
